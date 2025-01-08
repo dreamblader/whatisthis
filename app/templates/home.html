@@ -5,6 +5,13 @@
 		{% csrf_token %} {{form}}
 		<input class="send" type="submit" value="What is This?" />
 	</form>
-	{{result}}
+	{% if result != None %}
+	<h2>This short url link leads to:</h2>
+	<p><b>{{result.final_url}}</b></p>
+	<a class="send" href="{{result.final_url}}">Go to</a>
+	<p class="bottom">
+		this short link was checked <b>{{result.checks}}</b> times
+	</p>
+	{% endif %}
 </container>
 {% endblock %}
