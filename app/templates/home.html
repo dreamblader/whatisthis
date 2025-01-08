@@ -1,0 +1,9 @@
+{% extends "master.html"%} {% block content %}
+<container>
+	<h1>What is This?</h1>
+	<form action="/" method="post">
+		{% csrf_token %} {{form}}
+		<input type="submit" value="What is This?" />
+	</form>
+</container>
+{% endblock %}
