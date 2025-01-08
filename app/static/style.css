@@ -1,6 +1,25 @@
+@font-face {
+    font-family: Roboto;
+    src: url(font/Roboto-Medium.ttf) format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(font/Roboto-Black.ttf) format('truetype');
+    font-weight: 700;
+}
+
 body{
-    background-color: rgb(85, 204, 111);
     height: 100vh;
+    font-family: Roboto;
+    background-color: rgb(85, 204, 111);
+    background-image: url("img/question_rot.png");
+    background-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 container{
@@ -8,7 +27,9 @@ container{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    background-color: rgba(85, 204, 111, 0.85);
+    border-radius: 5px;
+    padding: 1rem 8rem;
 }
 
 form{
@@ -16,6 +37,13 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+container > h1 {
+    color: white;
+    font-size: 3rem;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 1rem;
 }
 
 form > *{
@@ -27,5 +55,24 @@ form > *{
 }
 
 label{
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+
+.send{
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: rgb(133, 32, 65);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px black;
+    border: 2px solid black;
+    padding: 0.5em 0.75em;
+    transition: 0.5s;
+}
+
+.send:hover{
+    border: 2px solid white;
+    background-color: rgb(192, 25, 81);
+    color: black;
 }

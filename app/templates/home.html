@@ -3,7 +3,8 @@
 	<h1>What is This?</h1>
 	<form action="/" method="post">
 		{% csrf_token %} {{form}}
-		<input type="submit" value="What is This?" />
+		<input class="send" type="submit" value="What is This?" />
 	</form>
+	{{result}}
 </container>
 {% endblock %}
