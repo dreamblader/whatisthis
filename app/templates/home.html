@@ -12,6 +12,16 @@
 	<p class="bottom">
 		this short link was checked <b>{{result.checks}}</b> times
 	</p>
+	{% endif %} {%if error%}
+	<div class="error">
+		<p>Oops...</p>
+		<p>
+			Looks like this link is not short or we cannot find the redirect
+			location
+		</p>
+		<p>Sorry...</p>
+	</div>
+
 	{% endif %}
 </container>
 {% endblock %}

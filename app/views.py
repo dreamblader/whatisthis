@@ -7,9 +7,13 @@ from . import services
 def home(request):
     form = ShortURLForm(request.POST) if request.method == "POST" else ShortURLForm()
     result = None
+    error = False
     if form.is_valid():
-        result = services.getURL(form.cleaned_data["short_url"])
+        try:
+            result = services.getURL(form.cleaned_data["short_url"])
+        except:
+            error = True
     
-    context = {"form": form, "result":result}
+    context = {"form": form, "result":result, "error":error}
     
     return render(request, "home.html", context)
