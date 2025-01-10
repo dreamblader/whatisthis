@@ -12,9 +12,9 @@ def home(request):
     if form.is_valid():
         try:
             result = services.getURL(form.cleaned_data["short_url"])
-        except Exception as error:
+        except Exception as e:
             if settings.DEBUG:
-                print(error)
+                print(e)
             error = True
     
     context = {"form": form, "result":result, "error":error}
